@@ -40,6 +40,5 @@ public class Ui extends JPanel{
     //Vous verrez cette phrase chaque fois que la méthode sera invoquée
     System.out.println("Je suis exécutée !"); 
     g.fillOval(20, 20, 75, 75);
-  }  
-    
+  }    
 }
