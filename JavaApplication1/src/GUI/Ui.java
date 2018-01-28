@@ -69,8 +69,13 @@ public class Ui extends JPanel{
         Jeu jpentago = new Jeu();
         Map = jpentago.Init();
         System.out.println(Map.get(0));
+        //afficher(Map);
     }
     
+    public void afficher(Graphics g)
+    {
+        
+    }
     
     public void readregle(){
         vider();
