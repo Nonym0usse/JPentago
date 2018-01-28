@@ -15,10 +15,9 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-  Ui objetFenetre  = new Ui();
-  objetFenetre.windows();
-  objetFenetre.HomeUi();
-        
+        Ui objetFenetre  = new Ui();
+        objetFenetre.windows();
+        objetFenetre.actionButton();      
     }
     
 }
