@@ -21,19 +21,19 @@ public class Jeu implements IJeu {
 
     
     public ArrayList Init() {
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             HG.add(0);
         }
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             HD.add(0);
         }
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             BG.add(0);
         }
 
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 9; i++) {
             BD.add(0);
         }
         Map.add(HG);
@@ -41,10 +41,6 @@ public class Jeu implements IJeu {
         Map.add(BG);
         Map.add(BD);
         // System.out.println(HG.get(0));
-        for (int i = 0; i < 8; i++) {
-            HG.add(0);
-        }
-
            return Map;
     }
 

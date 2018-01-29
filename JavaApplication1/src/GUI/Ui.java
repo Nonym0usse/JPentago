@@ -7,7 +7,9 @@ package GUI;
 
 import Jeu.Jeu;
 import Joueur.Joueur;
-import java.awt.Color; 
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,6 +21,15 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import static java.lang.Thread.sleep;
+import static javafx.application.Platform.exit;
+import javax.imageio.ImageIO;
+
 
 /**
  *
@@ -30,7 +41,6 @@ public class Ui extends JPanel{
       private JButton regle = new JButton("Lire les règles");
       private JFrame fenetre = new JFrame();
       private JLabel text = new JLabel();
-     
       public Joueur player1 = new Joueur("Joueur un", 0, "Bleu", 1);
       public Joueur player2 = new Joueur("Joueur deux", 0, "Rouge", 2);
       
@@ -68,14 +78,17 @@ public class Ui extends JPanel{
         System.out.println(player2.getPseudo());
         Jeu jpentago = new Jeu();
         Map = jpentago.Init();
-        System.out.println(Map.get(0));
-        //afficher(Map);
+        afficher(Map);
     }
     
-    public void afficher(Graphics g)
+    public void afficher(ArrayList mapconsole)
     {
-        
+        int nbpannel = mapconsole.size();
+        System.out.println(nbpannel);
+        Graphics graphics = pan.getGraphics();
+        pan.repaint();
     }
+
     
     public void readregle(){
         vider();
@@ -84,8 +97,15 @@ public class Ui extends JPanel{
     }
     
     public void paintComponent(Graphics g){
-    //Vous verrez cette phrase chaque fois que la méthode sera invoquée
-    System.out.println("Je suis exécutée !"); 
-    g.fillOval(20, 20, 75, 75);
-  }    
+     try {
+    super.paintComponent(g);
+      Image img = ImageIO.read(new File("3.jpg"));
+      g.drawImage(img, 0, 0, this);
+      //Pour une image de fond
+      //g.drawImage(img, 0, 0, this.getWidth(), this.getHeight(), this);
+    } catch (IOException e) {
+      e.printStackTrace();
+      System.out.println("pasd ok");
+    }   
+  }
 }
