@@ -5,6 +5,7 @@
  */
 package Menu;
 import GUI.Ui;
+import static javafx.application.Application.launch;
 /**
  *
  * @author hadji
@@ -16,8 +17,7 @@ public class main {
      */
     public static void main(String[] args) {
         Ui objetFenetre  = new Ui();
-        objetFenetre.windows();
-        objetFenetre.actionButton();      
+        launch(args);
     }
     
 }
