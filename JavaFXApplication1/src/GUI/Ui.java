@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 
 
 
-
 /**
  *
  * @author hadji
@@ -91,14 +90,14 @@ public class Ui extends Application{
         System.out.println("Choissisez un tableau : (0-3)");
         Scanner tableau = new Scanner(System.in);
         int fin  = Integer.parseInt(tableau.nextLine());
-        ArrayList test = (ArrayList) mapconsole.get(fin);
+        ArrayList tmp = (ArrayList) mapconsole.get(fin);
         
         System.out.println("Choissisez une case : (0-8)");
         Scanner caseScanner = new Scanner(System.in);
         
         int cases = Integer.parseInt(caseScanner.nextLine());
         
-        System.out.println(test.set(cases, player1.getId()));
+        System.out.println(tmp.set(cases, player1.getId()));
         System.out.println(mapconsole);
         
     }
