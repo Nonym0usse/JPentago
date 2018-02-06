@@ -7,20 +7,18 @@ package GUI;
 
 import Jeu.Jeu;
 import Joueur.Joueur;
-import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Scanner;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.shape.*;
 import javafx.stage.Stage;
-import javafx.scene.image.ImageView;
 
 
 
@@ -30,8 +28,8 @@ import javafx.scene.image.ImageView;
  * @author hadji
  */
 public class Ui extends Application{
-      private Button jouer = new Button();
-      private Button regle = new Button();
+      private final Button jouer = new Button();
+      private final Button regle = new Button();
       public Joueur player1 = new Joueur("Joueur un", 0, "Bleu", 1);
       public Joueur player2 = new Joueur("Joueur deux", 0, "Rouge", 2);
       public GridPane root = new GridPane();
@@ -89,12 +87,24 @@ public class Ui extends Application{
     
     public void afficher(ArrayList mapconsole)
     {
-        int nbpannel = mapconsole.size();
-        System.out.println(nbpannel);
+
+        System.out.println("Choissisez un tableau : (0-3)");
+        Scanner tableau = new Scanner(System.in);
+        int fin  = Integer.parseInt(tableau.nextLine());
+        ArrayList test = (ArrayList) mapconsole.get(fin);
+        
+        System.out.println("Choissisez une case : (0-8)");
+        Scanner caseScanner = new Scanner(System.in);
+        
+        int cases = Integer.parseInt(caseScanner.nextLine());
+        
+        System.out.println(test.set(cases, player1.getId()));
+        System.out.println(mapconsole);
+        
     }
 
     public void readregle(){
-        String regles = "Voici les règles lorem ipsum latarae mes couilles et tout";
+        String regles = "Voici les règles lorem ipsum....";
         text.setText(regles);
     }
 }
